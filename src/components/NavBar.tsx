@@ -12,12 +12,21 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import MailIcon from '@mui/icons-material/Mail';
-import { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 
-export function NavBar() {
+/**
+ *  @returns {void} -Change modal state.
+ */
+export function NavBar(): ReactElement {
   const [open, setOpen] = useState(false);
-  const toggleDrawer = () => setOpen(!open);
-  const menu = () => (
+  /**
+   *  @returns {void} -Change modal state.
+   */
+  const toggleDrawer = (): void => setOpen(!open);
+  /**
+   *  @returns {ReactElement} -Change modal state.
+   */
+  const Menu = (): ReactElement => (
     <Box
       sx={{ width: 250 }}
       role="presentation"
@@ -38,9 +47,11 @@ export function NavBar() {
   return (
     <AppBar position="fixed">
       <Toolbar>
-        <Button onClick={() => setOpen(!open)}>Menu</Button>
+        <Button onClick={() => setOpen(!open)}>
+          <MenuIcon />
+        </Button>
         <Drawer anchor="left" open={open} onClose={() => setOpen(!open)}>
-          {menu()}
+          <Menu />
         </Drawer>
         <Typography variant="h6" noWrap component="div">
           Persistent drawer

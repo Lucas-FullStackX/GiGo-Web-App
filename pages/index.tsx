@@ -1,9 +1,11 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import { NavBar } from '../src/components/NavBar';
 
-const Home: NextPage = () => {
+/**
+ * @returns {NextPage} -Home Page.
+ */
+export const Home: NextPage = () => {
   return (
     <div>
       <Head>
@@ -15,5 +17,4 @@ const Home: NextPage = () => {
     </div>
   );
 };
-
 export default Home;

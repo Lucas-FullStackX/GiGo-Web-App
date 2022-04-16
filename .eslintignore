@@ -10,3 +10,5 @@ config
 # src/shared/types/operations.ts
 # src/shared/types/apollo-helpers.ts
 craco.config.js
+next.config.js
+lint-staged.config.js

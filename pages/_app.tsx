@@ -3,8 +3,13 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from '../src/theme';
+import React from 'react';
 
-function MyApp({ Component, pageProps }: AppProps) {
+/**
+ * @param {AppProps} props -Props.
+ * @returns {React.ReactElement} -Home Page.
+ */
+export function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
   return (
     <>
       <Head>
@@ -18,5 +23,4 @@ function MyApp({ Component, pageProps }: AppProps) {
     </>
   );
 }
-
 export default MyApp;
