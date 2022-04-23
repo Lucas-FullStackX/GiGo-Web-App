@@ -1,6 +1,5 @@
 import {
   AppBar,
-  Button,
   Drawer,
   List,
   ListItem,
@@ -9,6 +8,7 @@ import {
   Toolbar,
   Typography,
   Box,
+  IconButton,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import MailIcon from '@mui/icons-material/Mail';
@@ -38,7 +38,16 @@ export function NavBar(): ReactElement {
           <ListItemIcon>
             <MailIcon />
           </ListItemIcon>
-          <ListItemText primary="test" />
+          <ListItemText primary="Home" />
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Log In" />
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Contactenos" />
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Sobre Nosotros" />
         </ListItem>
       </List>
     </Box>
@@ -47,9 +56,15 @@ export function NavBar(): ReactElement {
   return (
     <AppBar position="fixed">
       <Toolbar>
-        <Button onClick={() => setOpen(!open)}>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          onClick={() => toggleDrawer()}
+          edge="start"
+          sx={{ mr: 2, ...(open && { display: 'none' }) }}
+        >
           <MenuIcon />
-        </Button>
+        </IconButton>
         <Drawer anchor="left" open={open} onClose={() => setOpen(!open)}>
           <Menu />
         </Drawer>
